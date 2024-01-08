@@ -2,13 +2,15 @@
   <div class="wrapper">
     <div class="desc">个人主页</div>
     <div class="img">
-      <img src="https://tse4-mm.cn.bing.net/th/id/OIP-C.uWVlC0owLbAZ42XAqCZfUAAAAA?pid=ImgDet&rs=1"
-       alt="" class="img__image">
+      <img
+        src="https://tse4-mm.cn.bing.net/th/id/OIP-C.uWVlC0owLbAZ42XAqCZfUAAAAA?pid=ImgDet&rs=1"
+        alt=""
+        class="img__image"
+      />
     </div>
     <div class="items">
       <div class="item">
-        <div class="item__desc"
-        >姓名:sponge</div>
+        <div class="item__desc">姓名:sponge</div>
         <div class="iconfont item__icon">&#xe775;</div>
       </div>
       <div class="item">
@@ -36,7 +38,7 @@
   <Docker :currentIndex="3" />
 </template>
 
-<script>
+<script setup>
 import Docker from "@/views/home/Docker.vue";
 import { useRouter } from "vue-router";
 
@@ -46,16 +48,17 @@ const useShowOrdersEffect = (router) => {
   };
   return { handleshowAllOrders };
 };
-
-export default {
-  name: "Person",
-  components: { Docker },
-  setup() {
-    const router = useRouter();
-    const { handleshowAllOrders } = useShowOrdersEffect(router);
-    return { handleshowAllOrders };
-  },
-};
+const router = useRouter();
+const { handleshowAllOrders } = useShowOrdersEffect(router);
+//export default {
+// name: "Person",
+// components: { Docker },
+// setup() {
+//   const router = useRouter();
+//   const { handleshowAllOrders } = useShowOrdersEffect(router);
+//   return { handleshowAllOrders };
+// },
+//};
 </script>
 
 <style lang="scss" scoped>
@@ -67,7 +70,7 @@ export default {
     font-size: 0.2rem;
   }
   .img {
-    margin:auto;
+    margin: auto;
     //background-color: pink;
     width: 120px;
     height: 120px;
@@ -75,7 +78,7 @@ export default {
       display: inline-block;
       width: 120px;
       height: 120px;
-      border-radius:60px;
+      border-radius: 60px;
     }
   }
 }
